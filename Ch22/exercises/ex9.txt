@@ -1,0 +1,6 @@
+(a) getch() function is not in the standard library <stdio.h>, so it's
+    not a vaild way of reading a character from stdin.
+
+    in conio.h (https://en.wikipedia.org/wiki/Conio.h), there is getch
+    funtion which reads a character directly from the console without
+    buffer, and without echo.
