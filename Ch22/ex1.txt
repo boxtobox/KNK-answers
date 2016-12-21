@@ -1,0 +1,8 @@
+(a) A file of object code produced by a C compiler
+binary data
+(b) A program listing produced by a C compiler
+text data
+(c) An email message sent from one computer to another
+text data
+(d) A file containing a graphics image
+binary data

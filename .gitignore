@@ -30,4 +30,8 @@
 
 # Debug files
 *.dSYM/
+<<<<<<< 62c8a7c630a1a1fa10198d875d36c6e10d6c619c
 *.su
+=======
+*.su
+>>>>>>> "first commit"
