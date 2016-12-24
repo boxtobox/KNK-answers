@@ -4,5 +4,5 @@
     while (ch = getc(source_fp) != EOF)
         putc(ch, dest_fp);
 
-An error will occuer, since relational operator(!=) has higher
+An error will occur, since relational operator(!=) has higher
 precedence than simple assignment operator(=).
