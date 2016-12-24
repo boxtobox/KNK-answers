@@ -1,5 +1,5 @@
-.. ..
+1st line xD
 ..
 ..
 4th line
-5th line
+5th linemy_fputs testing.my_fputs testing.

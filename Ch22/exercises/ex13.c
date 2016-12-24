@@ -2,12 +2,11 @@
 #include <stdlib.h>
 
 int line_length(const char *filename, int n);
-void print_file_line_len(const char *filename);  // for reference
+void print_file_line_len(const char *filename);  // for checking contents of the file
 
 int main(void)
 {
-    FILE *fp;
-    char *filename = "ex13_test.txt";
+    char *filename = "ex12_test.txt";
     int n;
     printf("enter a line number: ");
     fscanf(stdin, "%d", &n);
@@ -16,7 +15,7 @@ int main(void)
     printf("length of line %d: %d\n", n, len);
 
     print_file_line_len(filename);
-
+    return 0;
 }
 
 int line_length(const char *filename, int n)
@@ -24,22 +23,26 @@ int line_length(const char *filename, int n)
     int ch, line, len = 0;
     FILE *fp;
     if ((fp = fopen(filename, "r")) == NULL) {
-        printf("Error: cannot open %s\n", filename);
+        fprintf(stderr, "Error: cannot open %s\n", filename);
         exit(EXIT_FAILURE);
     }
 
     for (line = 1; line < n; ) {
         ch = fgetc(fp);
-        if (ch == EOF)
+        if (ch == EOF) {
+            fclose(fp);
             return 0;
+        }
         if (ch == '\n')
             line++;
     }
     // we now reached line n
     for(;;) {
         ch = fgetc(fp);
-        if (ch == EOF || ch == '\n')
+        if (ch == EOF || ch == '\n') {
+            fclose(fp);
             return len;
+        }
         len++;
     }
 }
@@ -49,7 +52,7 @@ void print_file_line_len(const char *filename)
     int ch, line = 1, len = 0;
     FILE *fp;
     if ((fp = fopen(filename, "r")) == NULL) {
-        printf("Error: cannot open %s\n", filename);
+        fprintf(stderr, "Error: cannot open %s\n", filename);
         exit(EXIT_FAILURE);
     }
 
@@ -58,6 +61,7 @@ void print_file_line_len(const char *filename)
         ch = fgetc(fp);
         if (ch == EOF) {
             printf(" (len: %d)\n", len);
+            fclose(fp);
             return;
         }
         else if (ch == '\n') {
@@ -71,4 +75,5 @@ void print_file_line_len(const char *filename)
             len++;
         }
     }
+    fclose(fp);
 }

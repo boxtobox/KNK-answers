@@ -1,0 +1,13 @@
+#define SIZE 64L
+
+// (a) beginning of record n
+fseek(fp, n * SIZE, SEEK_SET)
+
+// (b) beginning of the last record in the file
+fseek(fp, -SIZE, SEEK_END)
+
+// (c) move forword one record
+fseek(fp, SIZE, SEEK_CUR)
+
+// (d)move backward two records
+fseek(fp, -2 * SIZE, SEE_CUR)
