@@ -31,6 +31,13 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="inventory.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="readline.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="readline.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

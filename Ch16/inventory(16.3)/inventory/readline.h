@@ -8,4 +8,5 @@
               length exceeds n. Returns the number of
               characters stored.
  **********************************************************/
+int read_line(char str[], int n)
 #endif // READLINE_H

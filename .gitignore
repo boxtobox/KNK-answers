@@ -4,6 +4,12 @@
 *.obj
 *.elf
 
+# code::block project related
+*.depend
+
+# 
+*.dat
+
 # Precompiled Headers
 *.gch
 *.pch
