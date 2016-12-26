@@ -6,6 +6,8 @@
 
 # code::block project related
 *.depend
+*.layout
+*.cbp
 
 # 
 *.dat
