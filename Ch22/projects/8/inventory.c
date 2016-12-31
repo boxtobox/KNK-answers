@@ -182,7 +182,6 @@ void dump(void)
         fprintf(stderr, "Error: can't write %s\n", filename);
         return;
     }
-    fwrite(&num_parts, sizeof(num_parts), 1, fp);
     n = fwrite(inventory, sizeof(inventory[0]), num_parts, fp);
     printf("return value of fwrite: %d\n", n);
     fclose(fp);
@@ -198,6 +197,7 @@ void dump(void)
  {
     FILE *fp;
     int n;
+    int pos = 0;
     char filename[MAX_FILE_LEN];
     printf("Enter name of input file: ");
     scanf("%[^\n]", filename);
@@ -206,15 +206,9 @@ void dump(void)
         fprintf(stderr, "Error: can't open %s\n", filename);
         return;
     }
-
-    fread(&num_parts, sizeof(num_parts), 1, fp);
-    n = fread(inventory, sizeof(inventory[0]), num_parts, fp);
-
-    if (n != num_parts) {
-        fprintf(stderr, "Reading error\n");
-        return;
-    }
-
+    while((n = fread(&inventory[pos++], sizeof(inventory[0]), 1, fp)) == 1);
+    num_parts = pos - 1;
+    printf("loaded %d items\n", num_parts);
     fclose(fp);
     return;
 
