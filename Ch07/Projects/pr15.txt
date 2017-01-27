@@ -1,0 +1,8 @@
+
+(a) short: until n is not greater than 7
+(b) int: until n is not greater than 12
+(c) long: up to 12
+(d) long long: up to 20
+(e) float: up to 34
+(f) double: up to 170
+(g) long double: up to 170
